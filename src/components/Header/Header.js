@@ -9,11 +9,11 @@ export class Header extends Component {
           <div className="d-flex d-flex-space-between">
             <S.Logo alt="logo Demo Shop" />
             <S.Menu>
-              <S.MenuItem>Seção 1</S.MenuItem>
-              <S.MenuItem>Seção 2</S.MenuItem>
-              <S.MenuItem>Seção 3</S.MenuItem>
-              <S.MenuItem>Seção 4</S.MenuItem>
-              <S.MenuItem>Seção 5</S.MenuItem>
+              <S.MenuItem>seção 1</S.MenuItem>
+              <S.MenuItem>seção 2</S.MenuItem>
+              <S.MenuItem>seção 3</S.MenuItem>
+              <S.MenuItem>seção 4</S.MenuItem>
+              <S.MenuItem>seção 5</S.MenuItem>
             </S.Menu>
           </div>
         </div>

@@ -1,13 +1,9 @@
 import React from 'react'
-
+import Payment from '../components/Payment/Payment'
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-      </header>
+      <Payment />
     </div>
   )
 }
