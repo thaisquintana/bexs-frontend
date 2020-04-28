@@ -24,11 +24,16 @@ const GlobalStyle = createGlobalStyle`
   button {
     cursor: pointer;
   }
-
+  .d-block {
+    display: block;
+  }
   .d-flex {
     display: flex;
     &-space-between {
       justify-content: space-between;
+    }
+    &-end {
+      justify-content: flex-end;
     }
   }
   .container {

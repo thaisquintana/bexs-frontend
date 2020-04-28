@@ -2,20 +2,21 @@ import styled from 'styled-components'
 import { device } from '../../assets/styles/device'
 import left from '../../assets/images/left-icon.svg'
 import right from '../../assets/images/right-icon.svg'
+import chevron from '../../assets/images/chevron-down.svg'
 import check from '../../assets/images/check-icon.svg'
+import tip from '../../assets/images/icon-info.svg'
 import card from '../../assets/images/card-icon.svg'
 
 export const PageWrapper = styled.div`
   background-color: #f7f7f7;
-  height: auto;
+  height: 100vh;
   padding: 65px 0;
 `
 export const Card = styled.div`
   background-color: #de4b4b;
   height: 596px;
-  width: 30%;
+  width: 32%;
   padding: 0 15px;
-
   p {
     font-size: 0.8rem;
     color: #fff;
@@ -23,7 +24,6 @@ export const Card = styled.div`
     line-height: 0.8;
     letter-spacing: -0.01px;
   }
-
   span {
     font-size: 1.2rem;
     color: #fff;
@@ -31,36 +31,147 @@ export const Card = styled.div`
     font-weight: 700;
   }
 `
-
 export const CardItem = styled.div`
   @media ${device.laptopXS} {
     margin-top: ${(props) => (props.topItem ? '54px' : '')};
     margin-left: ${(props) => (props.leftItem ? '68px' : '')};
   }
 `
-
 export const CardInformation = styled.div`
   background-color: #fff;
   width: 46%;
   padding: 0 15px;
+  .m-20 {
+    margin: 0 20px;
+  }
+  .pad-left {
+    padding-left: 82px;
+  }
+  .pad-left-20 {
+    padding-left: 20px;
+  }
+  .pad-right-20 {
+    padding-right: 20px;
+  }
+  .pad-right {
+    padding-right: 23px;
+  }
+  .m-top-20 {
+    margin-top: 20px;
+  }
+  .m-top-30 {
+    margin-top: 30px;
+  }
+  .total-splits {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #525151;
+  }
+  .select {
+    border-bottom: 1px solid #c9c9c9;
+    margin-right: 29px;
+    select {
+      color: #000;
+      padding: 0px 27px;
+      background: #fff;
+      font-size: 14px;
+      width: 100%;
+      border-style: none;
+      height: 60px;
+    }
+    &-label {
+      &:after {
+        content: '';
+        background-color: #fff;
+        background-image: url(${chevron});
+        width: 15px;
+        height: 15px;
+        position: absolute;
+        right: 31px;
+        top: 26px;
+        background-size: contain;
+        pointer-events: none;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+    }
+    table {
+      width: 100%;
+
+      th {
+        text-align: left;
+      }
+    }
+  }
 `
 export const PaymentResume = styled.div`
-  width: 22%;
+  width: 20%;
   background-color: #fff;
   margin-left: 20px;
   height: 285px;
+  .title {
+    background-color: #f7f7f7;
+    padding: 9px;
+    margin: 53px 20px 25px 20px;
+    border-radius: 4px;
+  }
+  hr {
+    border: 0.5px solid #707070;
+    margin: 0 24px;
+  }
+  .item {
+    background-color: #f7f7f7;
+    border-radius: 4px;
+    width: 54%;
+    height: 12px;
+    margin: 53px 20px 25px 20px;
+  }
+  .price {
+    background-color: #f7f7f7;
+    margin: 53px 20px 25px 20px;
+    border-radius: 4px;
+    width: 17%;
+    height: 12px;
+  }
+  .total {
+    background-color: #c9c9c9;
+    border-radius: 4px;
+    width: 54%;
+    height: 12px;
+    margin: 53px 20px 25px 20px;
+  }
+  .total-price {
+    background-color: #c9c9c9;
+    margin: 53px 20px 25px 20px;
+    border-radius: 4px;
+    width: 17%;
+    height: 12px;
+  }
+  .m-top {
+    margin: 0 20px 25px 20px;
+  }
+  .m-top-20 {
+    margin: 20px 20px 25px 20px;
+  }
 `
 export const LeftIcon = styled.img.attrs({
   src: `${left}`,
 })`
   width: 3%;
 `
+export const Tooltip = styled.img.attrs({
+  src: `${tip}`,
+})`
+  width: 30%;
+  position: relative;
+  top: 3px;
+`
 export const RightIcon = styled.img.attrs({
   src: `${right}`,
 })`
   position: relative;
-  top: -19px;
-  left: -17px;
+  top: -1px;
+  left: 0;
   width: 3%;
 `
 export const CheckIcon = styled.img.attrs({
@@ -69,7 +180,7 @@ export const CheckIcon = styled.img.attrs({
   position: relative;
   top: 4px;
   left: 2px;
-  width: 12.4%;
+  width: 17.3%;
 `
 export const CardIcon = styled.img.attrs({
   src: `${card}`,
@@ -78,53 +189,72 @@ export const CardIcon = styled.img.attrs({
 `
 export const CreditCard = styled.div`
   color: #fff;
+  position: relative;
+  left: 68px;
+
+  .jp-card-front {
+    box-shadow: 0 8px 16px rgba(2, 2, 2, 0.2);
+  }
   @media ${device.laptopXS} {
     margin-top: ${(props) => (props.topItem ? '54px' : '')};
-    margin-left: ${(props) => (props.leftItem ? '68px' : '')};
   }
 `
-
 export const StepPayment = styled.div`
   color: #de4b4b;
   margin: 49px 0 49px 82px;
-  label {
-    margin: 0 30px 0 9px;
-    font-size: 0.9rem;
-    font-weight: 500;
+  .m-top-6 {
+    margin-top: 6px;
   }
-  span {
-    background-color: #fff;
-    padding: 4px 8px;
-    font-size: 0.8rem;
-    font-weight: 700;
-    text-transform: capitalize;
-  }
-  .no-border {
-    border: none;
-    border-radius: 0;
-    color: #fff;
-    padding: 0;
-    span {
-      display: none;
+  .step {
+    width: 70%;
+    label {
+      margin: 0 30px 0 9px;
+      font-size: 0.85rem;
+      font-weight: 500;
     }
-  }
-  .m-left-6 {
-    margin: 0 22px 0 6px;
-  }
-
-  .m-left-9 {
-    margin: 0 30px 0 9px;
-  }
-
-  .border {
-    border: 1px solid #de4c4c;
-    border-radius: 50px;
+    span {
+      background-color: #fff;
+      padding: 4px 8px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: capitalize;
+    }
+    .no-payment {
+      top: -18px;
+      left: 126px;
+    }
+    .payment {
+      top: -1px;
+      left: -3px;
+    }
+    .no-border {
+      border: none;
+      border-radius: 0;
+      color: #fff;
+      padding: 0;
+      span {
+        display: none;
+      }
+    }
+    .left {
+      left: -4px;
+    }
+    .m-left-16 {
+      margin: 0 17px 0 16px;
+    }
+    .m-left-3 {
+      margin: 0 17px 0 3px;
+    }
+    .m-left-9 {
+      margin: 0 30px 0 9px;
+    }
+    .border {
+      border: 1px solid #de4c4c;
+      border-radius: 50px;
+    }
   }
 `
 export const Form = styled.form`
-  .pad-left {
-    padding-left: 82px;
-  }
   .m-bottom-16 {
     margin-bottom: 16px;
   }
@@ -133,14 +263,50 @@ export const Form = styled.form`
     display: block;
     font-size: 0.8rem;
   }
-
+  .line-inputs {
+    .float-label {
+      .cvv {
+        left: 16px;
+      }
+      .expiry {
+        left: -8px;
+      }
+    }
+  }
   .float-label {
     position: relative;
     padding-top: 3px;
-
+    margin-top: 30px;
+    .icon-tip {
+      &:hover {
+        &:after {
+          content: 'CVV é um código de segurança de 3 dígitos, impresso no verso do seu cartão de crédito. ';
+          position: absolute;
+          left: 56px;
+          width: 170px;
+          background-color: #000;
+          opacity: 0.8;
+          color: #fff;
+          padding: 14px;
+          border-radius: 12px;
+          top: -61px;
+        }
+      }
+    }
+    .color-danger {
+      color: #eb5757;
+      font-size: 0.8rem;
+      margin-top: 25px;
+    }
+    .border-danger {
+      border-bottom: 1px solid #eb5757;
+    }
+    .splits {
+      top: -10px;
+    }
     input {
       font-family: Verdana, Geneva, Tahoma, sans-serif;
-      margin: 10px 0 30px 0;
+      margin-top: 10px;
       padding: 7px 5px 0 0;
       height: 28px;
       width: 93%;
@@ -156,7 +322,6 @@ export const Form = styled.form`
       &:focus {
         background-color: #fff;
       }
-      /* Change the white to any color ;) */
       &:-webkit-autofill,
       &:-webkit-autofill:hover,
       &:-webkit-autofill:focus,
@@ -164,17 +329,14 @@ export const Form = styled.form`
         background-color: #fff;
         -webkit-box-shadow: 0 0 0 30px white inset;
       }
-
       &::placeholder {
         color: transparent;
       }
     }
-
     label {
       color: #c9c9c9;
       font-size: 0.8rem;
       font-weight: 500;
-      pointer-events: none;
       position: absolute;
       top: calc(50% - 23px);
       left: 77px;
@@ -185,25 +347,41 @@ export const Form = styled.form`
       box-sizing: border-box;
       font-family: Verdana, Geneva, Tahoma, sans-serif;
     }
-
     input:focus ~ label,
     input:not(:placeholder-shown) ~ label {
       font-size: 0.7rem;
       top: -5px;
       color: #c9c9c9;
-      background-color: #fff;
+      background-color: transparent;
     }
   }
+`
+export const Button = styled.div`
+  background-color: #de4b4b;
+  border-radius: 8px;
+  color: #fff;
+  text-transform: uppercase;
+  padding: 14px;
+  text-align: center;
+  width: 50%;
+  font-family: SF Pro, sans-serif;
+  font-weight: 600;
 `
 
 CardIcon.defaultProps = {
   'data-id': 'CardIcon',
+}
+Button.defaultProps = {
+  'data-id': 'Button',
 }
 PageWrapper.defaultProps = {
   'data-id': 'PageWrapper',
 }
 Card.defaultProps = {
   'data-id': 'Card',
+}
+CreditCard.defaultProps = {
+  'data-id': 'CreditCard',
 }
 CardItem.defaultProps = {
   'data-id': 'CardItem',
