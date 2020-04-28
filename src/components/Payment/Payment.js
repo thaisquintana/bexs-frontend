@@ -41,7 +41,7 @@ const Payment = (props) => {
       CCname: name.replace(/\s/g, '').length < 10,
       CCnumber: number.replace(/\D/g, '').length < 15,
       CCcvc: cvv.length < 3,
-      CCexpiry: parseInt(dated[1]) < parseInt(year),
+      CCexpiry: parseInt(dated[1]) < parseInt(year) || date.length < 4,
       CCsplit: split.length >= 12,
     }
     if (Object.values(errors).filter((error) => error).length > 0) {
