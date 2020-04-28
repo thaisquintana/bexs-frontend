@@ -1,6 +1,6 @@
 # bexs-frontend-test
 
-Application built using yarn (^1.19.0) and create-react-app, also styled-components.
+Application built using yarn (^1.19.0) also create-react-app and styled-components.
 
 ### Before Start
 
@@ -9,10 +9,6 @@ Run the command `npm install` to install all the dependencies.
 ### Run the application
 
 `yarn start`
-
-### To commit on this repositore
-
-run the command `git push upstream master`
 
 ### Build the Application
 
