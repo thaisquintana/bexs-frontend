@@ -1,6 +1,6 @@
 # bexs-frontend-test
 
-Application built using yarn (^1.19.0) and create-react-app, also using graphql,apollo-link-context and styled-components.
+Application built using yarn (^1.19.0) and create-react-app, also styled-components.
 
 ### Before Start
 
