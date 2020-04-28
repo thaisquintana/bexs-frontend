@@ -30,9 +30,10 @@ const Payment = (props) => {
     const number = document.getElementsByName('CCnumber')[0].value
     const cvv = document.getElementsByName('CCcvc')[0].value
     const split = document.getElementsByName('CCsplit')[0].value
-    const date = document
-      .getElementsByName('CCexpiry')[0]
-      .value.replace(/\D/g, '')
+    const fullYear = new Date().getFullYear()
+    const year = fullYear.toString().slice(0, 2)
+    const date = document.getElementsByName('CCexpiry')[0].value
+    const dated = document.getElementsByName('CCexpiry')[0].value.split('/')
     const code =
       document.getElementsByName('CCCode')[0] &&
       document.getElementsByName('CCCode')[0].value
@@ -40,7 +41,7 @@ const Payment = (props) => {
       CCname: name.replace(/\s/g, '').length < 10,
       CCnumber: number.replace(/\D/g, '').length < 15,
       CCcvc: cvv.length < 3,
-      CCexpiry: date.replace(/\D/g, '').length < 4,
+      CCexpiry: parseInt(dated[1]) < parseInt(year),
       CCsplit: split.length >= 12,
     }
     if (Object.values(errors).filter((error) => error).length > 0) {

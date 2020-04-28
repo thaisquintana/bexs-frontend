@@ -440,6 +440,15 @@ export const Form = styled.form`
   }
   @media ${device.laptopXS} {
     padding: 0;
+    .line-inputs {
+      padding-left: 82px;
+      .float-label {
+        .cvv {
+          padding-right: 20px;
+          left: 0;
+        }
+      }
+    }
     .float-label {
       padding-left: 82px;
       margin-right: 20px;
@@ -449,9 +458,6 @@ export const Form = styled.form`
           width: 93%;
         }
       }
-      .cvv {
-        padding-right: 20px;
-      }
       .icon-tip {
         &:hover {
           &:after {
@@ -460,9 +466,6 @@ export const Form = styled.form`
           }
         }
       }
-    }
-    .line-inputs {
-      padding-left: 82px;
     }
     .date-expiry,
     .code {
