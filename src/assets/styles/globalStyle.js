@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
+import { device } from '../../assets/styles/device'
 
 const GlobalStyle = createGlobalStyle`
     @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700');
@@ -38,8 +39,10 @@ const GlobalStyle = createGlobalStyle`
   }
   .container {
     max-width: 1200px;
-    padding: 0 15px;
     margin: 0 auto;
+    @media ${device.laptopXS} {
+      padding: 0 15px;
+    }
   }
 
   .grid {

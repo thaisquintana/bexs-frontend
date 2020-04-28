@@ -79,10 +79,16 @@ const Payment = (props) => {
       <div className="container">
         <div className="grid d-flex">
           <S.Card>
-            <S.CardItem className="d-flex" topItem leftItem>
+            <S.CardItemMobile topItem leftItem>
+              <S.LeftIcon />
+              <p>
+                <strong>Etapa {step === 2 ? 2 : 3}</strong> de 3
+              </p>
+            </S.CardItemMobile>
+            <S.CardItemPayment topItem leftItem>
               <S.LeftIcon />
               <p>Alterar forma de pagamento</p>
-            </S.CardItem>
+            </S.CardItemPayment>
             <S.CardItem className="d-flex" topItem leftItem>
               <S.CardIcon />
               <span>Adicione um novo cartão de crédito</span>
@@ -94,7 +100,7 @@ const Payment = (props) => {
             </S.CreditCard>
           </S.Card>
           <S.CardInformation>
-            <S.StepPayment className="d-flex">
+            <S.StepPayment>
               <div className="step">
                 <span className="no-border">
                   <S.CheckIcon />
@@ -148,7 +154,7 @@ const Payment = (props) => {
             >
               {step === 2 ? (
                 <S.Form>
-                  <div className="pad-left m-bottom-16 float-label">
+                  <div className="m-bottom-16 float-label">
                     <input
                       placeholder="Número do seu cartão"
                       type="text"
@@ -163,7 +169,7 @@ const Payment = (props) => {
                       </span>
                     )}
                   </div>
-                  <div className="pad-left m-bottom-16 float-label">
+                  <div className="m-bottom-16 float-label ">
                     <input
                       placeholder="Nome (igual no cartão)"
                       type="text"
@@ -178,8 +184,8 @@ const Payment = (props) => {
                       </span>
                     )}
                   </div>
-                  <div className="pad-left d-flex d-flex-space-between line-inputs">
-                    <div className="m-bottom-16 float-label">
+                  <div className="d-flex d-flex-space-between line-inputs">
+                    <div className="m-bottom-16 float-label date-expiry">
                       <input
                         placeholder="00/0000"
                         type="text"
@@ -195,7 +201,7 @@ const Payment = (props) => {
                         </span>
                       )}
                     </div>
-                    <div className="pad-left-20 pad-right-20 m-bottom-16 float-label">
+                    <div className="pad-left-20 m-bottom-16 float-label code">
                       <input
                         placeholder="CVC"
                         onChange={onCleanErrors}
@@ -212,7 +218,7 @@ const Payment = (props) => {
                       )}
                     </div>
                   </div>
-                  <div className="pad-left m-bottom-16 float-label">
+                  <div className="m-bottom-16 float-label">
                     <div
                       className={
                         errors.CCsplit ? 'select border-danger' : 'select'
@@ -245,7 +251,7 @@ const Payment = (props) => {
                     )}
                     <label className="splits">Número de parcelas</label>
                   </div>
-                  <div className="pad-right m-bottom-30 d-flex d-flex-end">
+                  <div className="m-bottom-30 d-flex d-flex-end">
                     <S.Button onClick={validadeCreditCardAndSubmit}>
                       Continuar
                     </S.Button>
@@ -253,7 +259,7 @@ const Payment = (props) => {
                 </S.Form>
               ) : null}
               {step === 3 ? (
-                <div className="pad-left">
+                <>
                   <div className="payment-resume">
                     <h2>
                       <span>Confirmação de compra</span>
@@ -316,12 +322,15 @@ const Payment = (props) => {
                       </span>
                     </div>
                   </div>
-                  <div className="pad-right m-bottom-30 d-flex d-flex-end">
-                    <S.Button onClick={onSubmitHandler} className="m-top-30">
+                  <div className="m-bottom-30 d-flex d-flex-end">
+                    <S.Button
+                      onClick={onSubmitHandler}
+                      className="m-top-30 confirm"
+                    >
                       Confirmar
                     </S.Button>
                   </div>
-                </div>
+                </>
               ) : null}
             </CardReactFormContainer>
           </S.CardInformation>

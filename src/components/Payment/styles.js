@@ -10,14 +10,17 @@ import card from '../../assets/images/card-icon.svg'
 export const PageWrapper = styled.div`
   background-color: #f7f7f7;
   height: 100vh;
-  padding: 65px 0;
+  padding: 0;
+  @media ${device.laptopXS} {
+    padding: 65px 0;
+  }
 `
 export const Card = styled.div`
   background-color: #de4b4b;
-  height: 596px;
-  width: 32%;
-  padding: 0 15px;
-  p {
+  height: 266px;
+  width: 100%;
+  padding: 10px 15px;
+  text-align: center p {
     font-size: 0.8rem;
     color: #fff;
     margin-left: 16px;
@@ -30,16 +33,57 @@ export const Card = styled.div`
     margin-left: 15px;
     font-weight: 700;
   }
+  @media ${device.laptopXS} {
+    width: 32%;
+    padding: 0 15px;
+    text-align: left;
+    height: 596px;
+  }
 `
 export const CardItem = styled.div`
+  width: 74%;
+  margin: 20px auto;
+  color: #fff;
   @media ${device.laptopXS} {
+    width: 90%;
     margin-top: ${(props) => (props.topItem ? '54px' : '')};
     margin-left: ${(props) => (props.leftItem ? '68px' : '')};
+    p {
+      margin-left: 20px;
+    }
+  }
+`
+
+export const CardItemPayment = styled.div`
+  width: 74%;
+  margin: 20px auto;
+  color: #fff;
+  display: none;
+  @media ${device.laptopXS} {
+    display: flex;
+    width: 90%;
+    margin-top: ${(props) => (props.topItem ? '54px' : '')};
+    margin-left: ${(props) => (props.leftItem ? '68px' : '')};
+    p {
+      margin-left: 20px;
+    }
+  }
+`
+export const CardItemMobile = styled.div`
+  width: 74%;
+  margin: 20px auto;
+  color: #fff;
+  display: block;
+  p {
+    margin-left: 83px;
+  }
+  @media ${device.laptopXS} {
+    display: none;
   }
 `
 export const CardInformation = styled.div`
   background-color: #fff;
-  width: 46%;
+  width: 100%;
   padding: 0 15px;
   .m-20 {
     margin: 0 20px;
@@ -63,16 +107,24 @@ export const CardInformation = styled.div`
     margin-top: 30px;
   }
   .total-splits {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     font-weight: 500;
     color: #525151;
   }
+  .payment-resume {
+    padding-top: 128px;
+    margin: 0 auto;
+    width: 83%;
+  }
+  .confirm {
+    margin: 30px auto;
+    width: 86%;
+  }
   .select {
     border-bottom: 1px solid #c9c9c9;
-    margin-right: 29px;
     select {
       color: #000;
-      padding: 0px 27px;
+      padding: 0px;
       background: #fff;
       font-size: 14px;
       width: 100%;
@@ -103,8 +155,28 @@ export const CardInformation = styled.div`
       }
     }
   }
+  @media ${device.laptopXS} {
+    width: 46%;
+    .select {
+      select {
+        padding: 0 27px;
+        margin-right: 29px;
+      }
+    }
+    .payment-resume {
+      padding-top: 0;
+      padding-left: 82px;
+      margin: 0;
+      width: 100%;
+    }
+    .confirm {
+      margin: 30px 20px;
+      width: 50%;
+    }
+  }
 `
 export const PaymentResume = styled.div`
+  display: none;
   width: 20%;
   background-color: #fff;
   margin-left: 20px;
@@ -153,6 +225,9 @@ export const PaymentResume = styled.div`
   .m-top-20 {
     margin: 20px 20px 25px 20px;
   }
+  @media ${device.laptopXS} {
+    display: block;
+  }
 `
 export const LeftIcon = styled.img.attrs({
   src: `${left}`,
@@ -190,18 +265,21 @@ export const CardIcon = styled.img.attrs({
 export const CreditCard = styled.div`
   color: #fff;
   position: relative;
-  left: 68px;
-
+  left: 26px;
+  width: 87%;
   .jp-card-front {
     box-shadow: 0 8px 16px rgba(2, 2, 2, 0.2);
   }
   @media ${device.laptopXS} {
+    left: 68px;
+    width: 100%;
     margin-top: ${(props) => (props.topItem ? '54px' : '')};
   }
 `
 export const StepPayment = styled.div`
   color: #de4b4b;
   margin: 49px 0 49px 82px;
+  display: none;
   .m-top-6 {
     margin-top: 6px;
   }
@@ -253,8 +331,13 @@ export const StepPayment = styled.div`
       border-radius: 50px;
     }
   }
+  @media ${device.laptopXS} {
+    display: flex;
+  }
 `
 export const Form = styled.form`
+  padding: 92px 30px;
+
   .m-bottom-16 {
     margin-bottom: 16px;
   }
@@ -282,14 +365,14 @@ export const Form = styled.form`
         &:after {
           content: 'CVV é um código de segurança de 3 dígitos, impresso no verso do seu cartão de crédito. ';
           position: absolute;
-          left: 56px;
+          left: -20px;
+          top: -92px;
           width: 170px;
           background-color: #000;
           opacity: 0.8;
           color: #fff;
           padding: 14px;
           border-radius: 12px;
-          top: -61px;
         }
       }
     }
@@ -309,7 +392,7 @@ export const Form = styled.form`
       margin-top: 10px;
       padding: 7px 5px 0 0;
       height: 28px;
-      width: 93%;
+      width: 100%;
       text-align: left;
       border-style: none;
       border-bottom: 1px solid #c9c9c9;
@@ -339,7 +422,7 @@ export const Form = styled.form`
       font-weight: 500;
       position: absolute;
       top: calc(50% - 23px);
-      left: 77px;
+      left: 0;
       transition: all 0.1s linear;
       -webkit-transition: all 0.1s linear;
       -moz-transition: all 0.1s linear;
@@ -355,6 +438,37 @@ export const Form = styled.form`
       background-color: transparent;
     }
   }
+  @media ${device.laptopXS} {
+    padding: 0;
+    .float-label {
+      padding-left: 82px;
+      margin-right: 20px;
+      label {
+        left: 77px;
+        input {
+          width: 93%;
+        }
+      }
+      .cvv {
+        padding-right: 20px;
+      }
+      .icon-tip {
+        &:hover {
+          &:after {
+            top: -61px;
+            left: 56px;
+          }
+        }
+      }
+    }
+    .line-inputs {
+      padding-left: 82px;
+    }
+    .date-expiry,
+    .code {
+      padding-left: 0;
+    }
+  }
 `
 export const Button = styled.div`
   background-color: #de4b4b;
@@ -363,9 +477,16 @@ export const Button = styled.div`
   text-transform: uppercase;
   padding: 14px;
   text-align: center;
-  width: 50%;
+  width: 100%;
   font-family: SF Pro, sans-serif;
   font-weight: 600;
+  margin-top: 30px;
+
+  @media ${device.laptopXS} {
+    width: 50%;
+    margin-top: 0;
+    margin-right: 23px;
+  }
 `
 
 CardIcon.defaultProps = {
@@ -385,6 +506,12 @@ CreditCard.defaultProps = {
 }
 CardItem.defaultProps = {
   'data-id': 'CardItem',
+}
+CardItemMobile.defaultProps = {
+  'data-id': 'CardItemMobile',
+}
+CardItemPayment.defaultProps = {
+  'data-id': 'CardItemPayment',
 }
 CardInformation.defaultProps = {
   'data-id': 'CardInformation',

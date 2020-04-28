@@ -1,46 +1,18 @@
-# Exame - Bexs Front-end
+# bexs-frontend-test
 
-## Desafio
+Application built using yarn (^1.19.0) and create-react-app, also using graphql,apollo-link-context and styled-components.
 
-Desenvolver uma aplicação front-end de acordo com as especificações descritas nos **requisitos** utilizando a _stack_ tecnologica de sua preferencia.
+###Before Start
+Run the command `npm install` to install all the dependencies.
 
-- Desenvolva este Layout: https://xd.adobe.com/spec/9c4a9206-ac61-4050-796d-89c00fb79e91-ea7b
-- Utilize a tecnologia de sua preferencia (ReactJs, Angular, Angularjs, Vue.js, Jquery, Bootstrap, Material, Nodejs, Java, C#, PHP, etc).
+###Run the application
 
-## Como entregar sua solução?
+`yarn start`
 
-1. Clone do repositório
+### To commit on this repositore
 
-2. Tente explicar a evolução do projeto em _commits_.
+run the command `git push upstream master`
 
-3. Caso use algum _task runner_/_module bundle_ - faça o commit da ultima versão build/bundle.
+### Build the Application
 
-4. Para nos enviar seu teste escolha uma das formas:
-
-### Gerar um patch:
-
-Para gerar o patch:
-
-```
-git format-patch origin/master --stdout > seu_nome.patch
-```
-
-Certifique que o patch irá funcionar executando >> `git apply seu_nome.patch` e nos envie através do email que entramos em contato
-
-### Criando um repositório público:
-
-Crie um repositório em uma plataforma de pública de repositórios (GitHub, BitBucket, GitLab, etc) e nos envie através do email que entramos em contato.
-
-## Requisitos
-
-- Faça códigos legiveis e utilize uma arquitetura de fácil entendimento.
-- Edite este Readme ou crie um novo Markdown explicando como um DEV deveria utilizar o projeto
-
-## Bonus
-
-- Testes automatizados.
-- Crie uma camada que efetue uma chamada REST para um endpoint fictício "/pagar" - iremos analisar apenas a estrutura
-
-## Dúvidas
-
-Entre em contato e nos questione.
+just run the command `npm build`
