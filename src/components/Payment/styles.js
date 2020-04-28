@@ -115,6 +115,13 @@ export const CardInformation = styled.div`
     padding-top: 128px;
     margin: 0 auto;
     width: 83%;
+    table {
+      width: 100%;
+
+      th {
+        text-align: left;
+      }
+    }
   }
   .confirm {
     margin: 30px auto;
@@ -145,13 +152,6 @@ export const CardInformation = styled.div`
         pointer-events: none;
         background-repeat: no-repeat;
         background-position: center;
-      }
-    }
-    table {
-      width: 100%;
-
-      th {
-        text-align: left;
       }
     }
   }
