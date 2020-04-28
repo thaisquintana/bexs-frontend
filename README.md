@@ -2,10 +2,11 @@
 
 Application built using yarn (^1.19.0) and create-react-app, also using graphql,apollo-link-context and styled-components.
 
-###Before Start
+### Before Start
+
 Run the command `npm install` to install all the dependencies.
 
-###Run the application
+### Run the application
 
 `yarn start`
 
